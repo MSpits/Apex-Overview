@@ -20,16 +20,16 @@ It works as follow :
 This contract is responsible for the bonds creation by the guardian. The user interact with this contract to buy bonds. 
 
 The main functions of this contract are :
-    - addBond() : Called by the guardian to create bonds that can be bought by users.
-    - setTerms() : Called by the guardian to set the terms of a bond.
-    - deposit() : Called by the users to buy bonds. Once bought the bond info are stored in the bondTeller thanks to the newBond() function of the BondTeller contract.
+- addBond() : Called by the guardian to create bonds that can be bought by users.
+- setTerms() : Called by the guardian to set the terms of a bond.
+- deposit() : Called by the users to buy bonds. Once bought the bond info are stored in the bondTeller thanks to the newBond() function of the BondTeller contract.
 
 ###  - Contract : BondTeller
 This contract is responsible to handle all the bonds bought and the redeem of the OHM token. 
 
 The main functions of this contract are : 
-    - newBond() : Called by the BondDepository when a bond is bought.
-    - redeem() : Called by the users at the end of the vesting period to get their OHM tokens bought.
+- newBond() : Called by the BondDepository when a bond is bought.
+- redeem() : Called by the users at the end of the vesting period to get their OHM tokens bought.
 ###  - Contract : StandardBondingCalculator
 This contract provides price information on the OHM token for the other bonding contracts. Math done in the contract is made for XYK AMM pool (e.g. Sushiswap pool). The XYK AMM equation is defined by : $$(reserve_{token\_1})*(reserve_{token\_2})= K$$. 
 The main functions of this contract are :
