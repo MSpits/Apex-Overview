@@ -31,8 +31,13 @@ The main functions of this contract are :
 - newBond() : Called by the BondDepository when a bond is bought.
 - redeem() : Called by the users at the end of the vesting period to get their OHM tokens bought.
 ###  - Contract : StandardBondingCalculator
-This contract provides price information on the OHM token for the other bonding contracts. Math done in the contract is made for XYK AMM pool (e.g. Sushiswap pool). The XYK AMM equation is defined by : $$(reserve_{token\_1})*(reserve_{token\_2})= K$$. 
+This contract provides price information on the OHM token for the other bonding contracts. Math done in the contract is made for XYK AMM pool (e.g. Sushiswap pool). The XYK AMM equation is defined by : 
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?(reserve_{token\_1})*(reserve_{token\_2})=&space;K" title="(reserve_{token\_1})*(reserve_{token\_2})= K" />
+</p>
+
 The main functions of this contract are :
-- getKValue() : Compute the K value of an XYK pool (e.g. Sushiswap pool).
+- getKValue() : Compute the K value of an XYK pool.
 - valuation() : Compute the OHM valuation of an SLP.
 - markdown() : Compute the markdown to be applied on a bonding.
